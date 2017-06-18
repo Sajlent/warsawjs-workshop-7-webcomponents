@@ -5,7 +5,10 @@ class MockupComponent extends HTMLElement {
     }
 
     connectedCallback() {
-        this.shadow.innerHTML = document.querySelector('template').innerHTML;
+        let $tmpl = document.querySelector('template').content;
+        let $cloned = $tmpl.cloneNode(true);
+
+        this.shadow.appendChild($cloned);
         this.shadow.querySelector('img').attributes.src.value = this.attributes.image.value;
     }
 }

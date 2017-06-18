@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>WebComponents</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <h1>Globalny nagłówek</h1>
     <template>
+        <style>
+            h1 {
+                background: wheat;
+                color: crimson;
+            }
+            img {
+                max-width: 200px;
+            }
+        </style>
         <link rel="stylesheet" href="main.css">
-        <h1>Czy ten tekst się wyświetli?</h1>
+        <h1></h1>
         <img src="">
     </template>
     <script src="main.js"></script>
     <mockup-component
-        label=""
+        label="Czy ten tekst się wyświetli?"
         image="../img/cat.jpg"
     ></mockup-component>
     <mockup-component
-        label=""
-        image="http://placeskull.com/100/100"
+        label="Mój piękny tekst"
+        image="http://placeskull.com/200/200"
     ></mockup-component>
 </body>
 </html>

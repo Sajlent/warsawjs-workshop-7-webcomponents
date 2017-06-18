@@ -1,3 +1,9 @@
 body {
     background: #eeeeee;
 }
+
+mockup-component {
+    display: block;
+    background: forestgreen;
+    padding: 20px;
+}

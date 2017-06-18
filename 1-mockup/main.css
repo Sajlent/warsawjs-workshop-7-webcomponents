@@ -1,9 +1,10 @@
 body {
     background: #eeeeee;
+    font-family: Verdana, sans-serif;
 }
 
 mockup-component {
     display: block;
-    background: forestgreen;
+    background: #dedede;
     padding: 20px;
 }

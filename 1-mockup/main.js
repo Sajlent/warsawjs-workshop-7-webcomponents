@@ -5,7 +5,7 @@ class MockupComponent extends HTMLElement {
     }
 
     connectedCallback() {
-        let $tmpl = document.querySelector('template').content;
+        let $tmpl = document.currentScript.ownerDocument.querySelector('template').content;
         let $cloned = $tmpl.cloneNode(true);
 
         this.shadow.appendChild($cloned);

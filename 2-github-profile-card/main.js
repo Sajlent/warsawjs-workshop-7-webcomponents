@@ -2,8 +2,6 @@ class ProfileCard extends HTMLElement {
     constructor() {
         super();
         this.shadow = this.attachShadow({ mode: 'open'});
-        console.log('test test');
-
     }
 
     connectedCallback() {
@@ -52,10 +50,13 @@ class ProfileCard extends HTMLElement {
     displayRepos(repos) {
         let repoList = '';
 
-        repos.forEach((el, i) => {
+        let sorted = repos.sort((a, b) => {
+            return b.stargazers_count - a.stargazers_count;
+        });
+        sorted.forEach((el, i) => {
             let repo = el;
             if (i < 9) {
-                repoList += `<li><span>&#9733; ${repo.stargazers_count}</span> 
+                repoList += `<li><span>&#9733; ${repo.stargazers_count}</span>
                     <a href="${repo.url}">${repo.name}</a></li>`;
             }
         });

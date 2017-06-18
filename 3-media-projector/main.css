@@ -1,0 +1,20 @@
+body {
+    background: #eeeeee;
+    font-family: Verdana, sans-serif;
+}
+
+mockup-component, profile-card {
+     width: 750px;
+     height: 400px;
+     display: block;
+     background: #f9f9f9;
+     padding: 20px;
+ }
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}

@@ -14,7 +14,7 @@ class ProfileCard extends HTMLElement {
 
     fetchProfileDetails(login) {
         // let url = 'https://api.github.com/users/' + login;
-        let url = './profile.json';
+        let url = '../data/profile.json';
 
         let options = { method: 'GET' };
         return fetch(url, options)
@@ -28,7 +28,7 @@ class ProfileCard extends HTMLElement {
     }
 
     fetchRepos(login) {
-        let url = './repos.json';
+        let url = '../data/repos.json';
 
         let options = { method: 'GET' };
         return fetch(url, options)

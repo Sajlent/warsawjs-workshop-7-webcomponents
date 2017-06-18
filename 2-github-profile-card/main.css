@@ -3,7 +3,9 @@ body {
     font-family: Verdana, sans-serif;
 }
 
-mockup-component {
+profile-card {
+    width: 500px;
+    height: 500px;
     display: block;
     background: #dedede;
     padding: 20px;

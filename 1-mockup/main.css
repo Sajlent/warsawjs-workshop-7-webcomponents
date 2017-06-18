@@ -4,6 +4,8 @@ body {
 }
 
 mockup-component {
+    width: 500px;
+    height: 500px;
     display: block;
     background: #dedede;
     padding: 20px;

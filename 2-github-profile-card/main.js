@@ -49,15 +49,15 @@ class ProfileCard extends HTMLElement {
 
     displayRepos(repos) {
         let repoList = '';
-
         let sorted = repos.sort((a, b) => {
             return b.stargazers_count - a.stargazers_count;
         });
+
         sorted.forEach((el, i) => {
             let repo = el;
             if (i < 9) {
                 repoList += `<li><span>&#9733; ${repo.stargazers_count}</span>
-                    <a href="${repo.url}">${repo.name}</a></li>`;
+                    <a href="${repo.html_url}">${repo.name}</a></li>`;
             }
         });
 

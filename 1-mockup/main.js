@@ -1,7 +1,12 @@
 class MockupComponent extends HTMLElement {
     constructor() {
         super();
-        console.log('TshirtComponent created!');
+        this.shadow = this.attachShadow({ mode: 'open'});
+    }
+
+    connectedCallback() {
+        this.shadow.innerHTML = document.querySelector('template').innerHTML;
+        this.shadow.querySelector('img').attributes.src.value = this.attributes.image.value;
     }
 }
 

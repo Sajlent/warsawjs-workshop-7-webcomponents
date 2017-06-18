@@ -1,21 +1,40 @@
-class Slider {
+class MediaProjectorElement extends HTMLElement {
     constructor() {
-        this.$slider = document.querySelector('.slider');
-        this.nextSlide();
+        super();
+        this.shadow = this.attachShadow({ mode: 'open' });
     }
 
-    nextSlide() {
-        let active;
-        setInterval(() => {
-            active = this.$slider.querySelector('.active');
-            active.classList.remove('active');
-            if (active.nextElementSibling === null) {
-                this.$slider.firstElementChild.classList.add('active');
-            } else {
-                active.nextElementSibling.classList.add('active');
+    connectedCallback() {
+        this.renderTemplate();
+        this.addEventListener('click', this.clickHandler);
+    }
+
+    renderTemplate() {
+        let $tmpl = document.querySelector('#media-projector-template')
+            .content.cloneNode(true);
+
+        this.shadow.appendChild($tmpl);
+    }
+
+    clickHandler() {
+        if (this.slider) {
+            return;
+        }
+
+        this.slider = new Slider ({
+            items: this.children,
+            callback: ($element) => {
+                this.displayMedia($element.cloneNode(true));
             }
-        }, 2000);
+        });
+    }
+
+    displayMedia($element) {
+        let $slider = this.shadow.querySelector('.slider');
+        console.log($element);
+        $slider.innerText = '';
+        $slider.appendChild($element);
     }
 }
 
-new Slider();
+window.customElements.define('media-projector-element', MediaProjectorElement);

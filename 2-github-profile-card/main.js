@@ -1,3 +1,4 @@
+
 class ProfileCard extends HTMLElement {
     constructor() {
         super();
@@ -5,7 +6,7 @@ class ProfileCard extends HTMLElement {
     }
 
     connectedCallback() {
-        let $tmpl = document.currentScript.ownerDocument.querySelector('template').content;
+        let $tmpl = ProfileCard.DOCUMENT.querySelector('#profile-card-template').content;
         let $cloned = $tmpl.cloneNode(true);
 
         this.shadow.appendChild($cloned);
@@ -64,6 +65,8 @@ class ProfileCard extends HTMLElement {
         this.shadow.querySelector('ul').innerHTML = repoList;
     }
 }
+
+ProfileCard.DOCUMENT = document.currentScript.ownerDocument;
 
 window.customElements.define('profile-card', ProfileCard);
 

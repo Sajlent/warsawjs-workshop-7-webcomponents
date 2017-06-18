@@ -1,11 +1,13 @@
+
 class MockupComponent extends HTMLElement {
     constructor() {
         super();
         this.shadow = this.attachShadow({ mode: 'open'});
+
     }
 
     connectedCallback() {
-        let $tmpl = document.currentScript.ownerDocument.querySelector('template').content;
+        let $tmpl = MockupComponent.DOCUMENT.querySelector('#mockup-template').content;
         let $cloned = $tmpl.cloneNode(true);
 
         this.shadow.appendChild($cloned);
@@ -14,5 +16,6 @@ class MockupComponent extends HTMLElement {
     }
 }
 
-window.customElements.define('mockup-component', MockupComponent);
+MockupComponent.DOCUMENT = document.currentScript.ownerDocument;
 
+window.customElements.define('mockup-component', MockupComponent);

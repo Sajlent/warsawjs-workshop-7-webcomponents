@@ -10,11 +10,3 @@ mockup-component, profile-card {
      background: #f9f9f9;
      padding: 20px;
  }
-
-.slide {
-    display: none;
-}
-
-.slide.active {
-    display: block;
-}

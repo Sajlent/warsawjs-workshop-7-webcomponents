@@ -4,9 +4,9 @@ body {
 }
 
 mockup-component {
-    width: 500px;
-    height: 500px;
+    width: 750px;
+    height: 400px;
     display: block;
-    background: #dedede;
+    background: #f9f9f9;
     padding: 20px;
 }

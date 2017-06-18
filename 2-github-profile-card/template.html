@@ -1,0 +1,43 @@
+<template id="profile-card-template">
+    <style>
+        div {
+            overflow: hidden;
+        }
+        h2 {
+            font-family: Verdana, sans-serif;
+            color: crimson;
+        }
+        img {
+            max-width: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+        .repo-list {
+            display: block;
+            clear: both;
+            padding: 0;
+            margin-top: 50px;
+        }
+        .repo-list li {
+            width: 33.33%;
+            display: inline-block;
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        .repo-list span {
+            background: #dedede;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+    <div>
+        <img src="">
+        <h2></h2>
+        <p class="bio"></p>
+        <p class="location"></p>
+    </div>
+
+    <ul class="repo-list"></ul>
+</template>
+
+<script src="main.js"></script>

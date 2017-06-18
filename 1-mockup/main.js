@@ -10,7 +10,7 @@ class MockupComponent extends HTMLElement {
 
         this.shadow.appendChild($cloned);
         this.shadow.querySelector('img').attributes.src.value = this.attributes.image.value;
-        this.shadow.querySelector('h1').innerText = this.attributes.label.value;
+        this.shadow.querySelector('h2').innerText = this.attributes.label.value;
     }
 }
 
